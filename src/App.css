@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  /* border: 1px solid black; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "CookieMonster";
+  src: url("./assets/CookieMonster.ttf") format("truetype"),
+  url("./assets/CookieMonster.ttf") format("woff2"),
+  url("./assets/CookieMonster.ttf") format("woff");
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html{
+  font-size: 10px;
+}
+
+body{
+  --color-primary: #FDCC0D;
+  font-family: 'poppins', sans-serif;
+}
+
+.cookie-font{
+  font-family: "CookieMonster";
+}
+
+
+.landing{
+    height: 90vh;
+    background-image: url('./assets/doodle.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
   }
+  
+  .landing-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.landing-heading{
+  font-size: 15rem;
+  margin-bottom: 10vh;
+}
+
+.landing-option-wrapper{
+  margin-top: 5vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+  gap: 10rem;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.game{
+  height: 90vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-board{
+  padding: 2rem 4rem;
+  height: 81vh;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.canvas{
+  box-shadow: 0 0.4rem 1rem 0.3rem rgba(0, 0, 0, 0.25);
+  height: 100%;
+  aspect-ratio: 1.8/1;
+  border-radius: 0.6rem ;
+  -webkit-border-radius:0.6rem ;
+  -moz-border-radius: 0.6rem ;
+  -ms-border-radius: 0.6rem ;
+  -o-border-radius: 0.6rem ;
+  -webkit-border-radius: 0.6rem ;
+}
+
+.options{
+  
 }

@@ -1,0 +1,34 @@
+.header{
+    background-color: var(--color-primary);
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    font-size: 2rem;
+}
+
+.header img{
+    width: 4rem;
+}
+
+.header-info{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+
+}
+
+.player-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+.player-wrapper h2{
+    margin-bottom: -1rem;
+}
