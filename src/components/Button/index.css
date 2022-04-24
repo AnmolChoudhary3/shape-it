@@ -4,5 +4,8 @@
     font-weight: 800;
     padding: 0.2ch 1.8ch;
     cursor: pointer;
-    box-shadow: 0.2ch 0.2ch 0 0 #c5c5c5b6
+    box-shadow: 0.2ch 0.2ch 0 0 #c5c5c5b6;
+    width: fit-content;
+    align-self: center;
+    justify-self: center;
 }
