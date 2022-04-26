@@ -8,7 +8,7 @@ function Header({name}) {
             <h1>{name}</h1>
             <div className='header-info'>
                 <img src={teamwork} />
-                <div class="player-wrapper">
+                <div className="player-wrapper">
                     <h2>40</h2>
                     <p>Players</p>
                 </div>

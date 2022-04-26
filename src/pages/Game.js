@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../components/Button'
 import Header from '../components/Header'
 import pencil from '../assets/pencil.png'
@@ -7,9 +7,13 @@ import undo from '../assets/undo.png'
 import redo from '../assets/redo.png'
 import man from '../assets/man.png'
 import { Link } from 'react-router-dom'
+import Modal from '../components/Modal'
 
 
 function Game() {
+
+    const [showModal, setShowModal] = useState(true)
+
     return (
         <section className='game'>
            <Header name='Mind Palace'/>
@@ -35,6 +39,7 @@ function Game() {
                        </ul>
                    </div>
                    <Link to='/result'><Button txt="Submit" font_size={3}/></Link>
+                   {showModal && <Modal/>}
                </div>
            </div>
         </section>

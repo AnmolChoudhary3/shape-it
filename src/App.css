@@ -181,6 +181,7 @@ ul{
 
 .result-wrapper h1{
   font-size: 6rem;
+  margin-bottom: 1rem;
 }
 
 .result-data-wrapper{
@@ -188,18 +189,36 @@ ul{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: 1.3rem;
-  border-radius: 3rem ;
-  -webkit-border-radius: 3rem ;
-  -moz-border-radius: 3rem ;
-  -ms-border-radius: 3rem ;
-  -o-border-radius: 3rem ;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
   box-shadow: 0 0.4rem 1rem 0.3rem rgba(0, 0, 0, 0.25);
-  width: 60%;
+  width: 50%;
   height: 100%;
-  overflow-y: scroll;
-  margin-bottom: 3rem;
+  overflow-y: overlay;
+}
+
+.result-data-wrapper::-webkit-scrollbar{
+  width: 2.3rem;
+}
+
+.result-data-wrapper::-webkit-scrollbar-track{
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.result-data-wrapper::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border: 0.8rem solid white;
+  border-radius: 100vw;
+  -webkit-border-radius: 100vw;
+  -moz-border-radius: 100vw;
+  -ms-border-radius: 100vw;
+  -o-border-radius: 100vw;
+}
+
+.result-data-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #e2b501;
 }
 
 .result-data-wrapper ul{

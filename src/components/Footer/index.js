@@ -4,7 +4,7 @@ import './index.css'
 function Footer() {
     return (
         <footer className='footer'>
-            <p>Made by Anmol & Akash ✌</p>
+            <p>Made by Anmol, Amandeep & Akash ✌</p>
         </footer>
     )
 }

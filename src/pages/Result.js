@@ -15,6 +15,7 @@ function Result() {
                             <p>Score</p>
                         </li>
                         <li>  <p>1</p><p>Akash</p><p>10</p>  </li>
+                        <li>  <p>1</p><p>Anmol choudhary</p><p>50</p>  </li>
                         <li>  <p>1</p><p>Anmol</p><p>50</p>  </li>
                         <li>  <p>1</p><p>Anmol</p><p>50</p>  </li>
                         <li>  <p>1</p><p>Anmol</p><p>50</p>  </li>
@@ -28,8 +29,7 @@ function Result() {
                         <li>  <p>1</p><p>Anmol</p><p>50</p>  </li>
                         <li>  <p>1</p><p>Anmol</p><p>50</p>  </li>
                         <li>  <p>1</p><p>Anmol</p><p>50</p>  </li>
-                        <li>  <p>1</p><p>Anmol</p><p>50</p>  </li>
-                        <li>  <p>1</p><p>Anmol</p><p>20</p>  </li>
+                        <li>  <p>1</p><p>Anmol</p><p>2  0</p>  </li>
                     </ul>
                 </div>
             </div>
