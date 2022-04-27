@@ -4,15 +4,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.575);
+    background: rgba(0, 0, 0, 0.5);
     display: grid;
     place-items: center;
 }
 
+
 .modal{
+    box-shadow: 0 0 4rem 0 var(--color-primary);
     background-color: white;
     border: 1.5rem solid var(--color-primary);
-    width: 45%;
+    width: 45vw;
+    height: 85vh;
     border-radius:2.5rem ;
     -webkit-border-radius:2.5rem ;
     -moz-border-radius:2.5rem ;
@@ -21,6 +24,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2rem;
+    animation-name: modal;
+    animation-duration: 0.25s;
+}
+
+@keyframes modal {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .modal h1{
@@ -30,9 +45,52 @@
 .cancel-img{
     width: 2.5rem;
     align-self: flex-end;
-    margin:1rem 1rem 0 0 ;
+    cursor: pointer;
+    /* margin:1rem 1rem 0 0 ; */
 }
 
 .ranking-img{
-    width: 40rem;
+    width: 30rem;
+}
+
+.your-rank-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.your-rank{
+
+}
+
+.full-result-button{
+    background-color: var(--color-primary);
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+    cursor: pointer;
+}
+
+.your-rank-avatar{
+    width: 7rem;
+}
+
+.your-rank{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.your-rank h2{
+    font-size: 2.8rem;
+}
+
+.your-rank p{
+    font-size: 1.2rem;
 }

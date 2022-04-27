@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 function Landing() {
     return (
         <main className='landing'>
-            <div class="landing-wrapper">
+            <div className="landing-wrapper">
                 <h1 className='cookie-font landing-heading'>Shape It</h1>
                 <Link to='/game'><Button txt="Play" font_size={5}/></Link>
                 <div className='landing-option-wrapper'>

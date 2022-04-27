@@ -12,7 +12,11 @@ import Modal from '../components/Modal'
 
 function Game() {
 
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
+
+    const handleModalClick = () =>{
+        setShowModal(!showModal)
+    }
 
     return (
         <section className='game'>
@@ -38,8 +42,8 @@ function Game() {
                            
                        </ul>
                    </div>
-                   <Link to='/result'><Button txt="Submit" font_size={3}/></Link>
-                   {showModal && <Modal/>}
+                  <Button txt="Submit"  font_size={3} handleModalClick={handleModalClick} />
+                   {showModal && <Modal handleModalClick ={handleModalClick}/>}
                </div>
            </div>
         </section>
