@@ -1,4 +1,6 @@
-*{
+*,
+*::before,
+*::after{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -84,13 +86,70 @@ ul{
   background-color: white;
   box-shadow: 0 0.4rem 1rem 0.3rem rgba(0, 0, 0, 0.25);
   height: 100%;
-  aspect-ratio: 1.8/1;
+  width: 100%;
+  /* aspect-ratio: 1.8/1; */
   border-radius: 0.6rem ;
   -webkit-border-radius:0.6rem ;
   -moz-border-radius: 0.6rem ;
   -ms-border-radius: 0.6rem ;
   -o-border-radius: 0.6rem ;
   -webkit-border-radius: 0.6rem ;
+}
+
+#canvas.draw{
+  cursor: url("assets/pencil.gif"), auto;
+
+}
+
+#canvas.erase{
+  cursor: url("assets/eraser.gif") 5 5, auto;
+}
+
+.options .menu div{
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.options .menu div.active{
+  position: relative;
+  transform: translateY(-0.5rem);
+  -webkit-transform: translateY(-0.5rem);
+  -moz-transform: translateY(-0.5rem);
+  -ms-transform: translateY(-0.5rem);
+  -o-transform: translateY(-0.5rem);
+ 
+}
+
+.options .menu div::before{
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  width: 100%;
+  height: 0.4rem;
+  background-color: var(--color-primary);
+  display: block;
+  transform-origin: center;
+  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+}
+
+.options .menu div.active:before{
+  transform: scaleX(120%);
+  -webkit-transform: scaleX(120%);
+  -moz-transform: scaleX(120%);
+  -ms-transform: scaleX(120%);
+  -o-transform: scaleX(120%);
 }
 
 .options{
@@ -102,9 +161,7 @@ ul{
 
 .timer{
   background-color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   font-size: 3.5rem;
   color: white;
   border-radius:0.5rem ;
@@ -112,9 +169,9 @@ ul{
   -moz-border-radius:0.5rem ;
   -ms-border-radius:0.5rem ;
   -o-border-radius:0.5rem ;
-  width: fit-content;
-  padding: 0rem 5rem;
+  width: 7ch;
   align-self: center;
+  white-space: nowrap;
 }
 
 .menu{
