@@ -17,8 +17,62 @@ function Game() {
 
     // let tool = "draw";
 
+    async function postData(url = '', data = {}) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify(data) // body data type must match "Content-Type" header
+        });
+        return response.json(); // parses JSON response into native JavaScript objects
+    }
+
+    const convertImageData = (data) => {
+        let converted_data = []
+        for (let i = 0; i < data.length; i += 4) {
+            if(data[i+3] === 255){
+                converted_data.push(1)
+            }
+            else{
+                converted_data.push(0)
+            }
+        }
+        return converted_data
+    }
+
+    const getCanvas32 = () => {
+        const canvas = document.querySelector("#canvas")
+        const ctx = canvas.getContext("2d")
+        const oc = document.createElement('canvas');
+        const octx = oc.getContext('2d');
+        oc.width = 32
+        oc.height = 32
+        octx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, 32, 32)
+        ctx.drawImage(oc, 0, 0, 32, 32)
+        let data = octx.getImageData(0, 0, 32, 32).data
+        data = convertImageData(data)
+        console.log(data)
+        postData('http://127.0.0.1:5000/getResult', { data })
+        .then(data => {
+            console.log(data); // JSON data parsed by `data.json()` call
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
     const handleDelete = () => {
         setTool("delete")
+        setTimeout(() => {
+            setTool("draw")
+        }, 300)
         // ctx = canvasRef.current.getContext("2d")
         // canvasRef.current.className = "draw"
         // if(ctx){
@@ -33,11 +87,11 @@ function Game() {
         // canvasRef.current.className = "draw";
     }
 
-    const handleErase = () => {
-        setTool("erase");
-        // ctx = canvasRef.current.getContext("2d")
-        // canvasRef.current.className = "erase";
-    }
+    // const handleErase = () => {
+    //     setTool("erase");
+    //     // ctx = canvasRef.current.getContext("2d")
+    //     // canvasRef.current.className = "erase";
+    // }
 
     const handleModalClick = () =>{
         setShowModal(!showModal)
@@ -65,7 +119,7 @@ function Game() {
                            
                        </ul>
                    </div>
-                  <Button txt="Submit" font_size={3} handleModalClick={handleModalClick} />
+                  <Button txt="Submit" font_size={3} handleModalClick={getCanvas32} />
                    {showModal && <Modal handleModalClick ={handleModalClick}/>}
                </div>
            </div>

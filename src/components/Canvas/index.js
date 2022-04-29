@@ -26,12 +26,13 @@ function Canvas({tool}) {
     const handleMouseDown = (e) => {
         position.x = e.offsetX
         position.y = e.offsetY
-        // console.log(tool)
         if(ctx){
             ctx.beginPath()
             ctx.moveTo(position.x, position.y)
             if(tool === "draw"){
-                ctx.lineWidth = Math.min(canvasRef.current.width, canvasRef.current.height) / 200
+                ctx.lineWidth = Math.min(canvasRef.current.width, canvasRef.current.height) / 20
+                ctx.antiAlias = true;
+                ctx.lineCap = "round";
                 ctx.strokeStyle = "black"
             }
             else if(tool === "erase"){
@@ -67,10 +68,6 @@ function Canvas({tool}) {
     useEffect(() => {
         ctx = canvasRef.current.getContext("2d")
         resize()
-        if(ctx){
-            ctx.antiAlias = true;
-            ctx.lineCap = "round";
-        }
         canvasRef.current.addEventListener("mousedown", handleMouseDown)
         canvasRef.current.addEventListener("mouseup", handleMouseUp)
         window.addEventListener("resize", handleResize)
